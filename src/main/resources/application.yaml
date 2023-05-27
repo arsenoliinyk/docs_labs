@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: guest
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/docs_db?allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    password: password
+  jpa:
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show_sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
+  error:
+    include-message: always
